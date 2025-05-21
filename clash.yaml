@@ -1,0 +1,76 @@
+﻿port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  default-nameserver:
+    - 8.8.8.8
+  nameserver:
+    - tls://1.1.1.1
+
+proxies:
+  - name: "🇸🇬 新加坡节点"
+    type: ss
+    server: 13.214.245.118
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: Pengjiazhen1@
+    udp: true
+
+  - name: "🇯🇵 日本节点"
+    type: ss
+    server: 57.182.171.172
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: dppkfc3DGkPB
+    udp: true
+
+  - name: "🇭🇰 香港主节点"
+    type: ss
+    server: 18.166.159.76
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: 8HyzwP2ndDq2
+    udp: true
+
+  - name: "🇰🇷 韩国节点"
+    type: ss
+    server: 13.125.29.84
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: vEwLrYpE4uQT
+    udp: true
+
+  - name: "🇭🇰 香港备用1"
+    type: ss
+    server: 16.162.213.179
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: WTQVIoFIzB0u
+    udp: true
+
+  - name: "🇭🇰 香港备用2"
+    type: ss
+    server: 18.166.230.49
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: RwrGkjikZ6v7
+    udp: true
+
+proxy-groups:
+  - name: "🌐 自动切换"
+    type: select
+    proxies:
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🇭🇰 香港主节点
+      - 🇰🇷 韩国节点
+      - 🇭🇰 香港备用1
+      - 🇭🇰 香港备用2
+
+rules:
+  - MATCH,🌐 自动切换
