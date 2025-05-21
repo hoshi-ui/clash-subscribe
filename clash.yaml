@@ -1,4 +1,4 @@
-﻿port: 7890
+port: 7890
 socks-port: 7891
 allow-lan: true
 mode: Rule
@@ -61,16 +61,5 @@ proxies:
     password: RwrGkjikZ6v7
     udp: true
 
-proxy-groups:
-  - name: "🌐 自动切换"
-    type: select
-    proxies:
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇭🇰 香港主节点
-      - 🇰🇷 韩国节点
-      - 🇭🇰 香港备用1
-      - 🇭🇰 香港备用2
-
 rules:
-  - MATCH,🌐 自动切换
+  - MATCH,🇭🇰 香港主节点
