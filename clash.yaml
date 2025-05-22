@@ -13,53 +13,37 @@ dns:
     - tls://1.1.1.1
 
 proxies:
-  - name: "🇸🇬 新加坡节点"
+  - name: "🇭🇰 香港节点 A"
     type: ss
-    server: 13.214.245.118
+    server: 43.199.244.212
     port: 8388
     cipher: chacha20-ietf-poly1305
-    password: Pengjiazhen1@
+    password: Lg8luviHkneh
     udp: true
 
-  - name: "🇯🇵 日本节点"
+  - name: "🇸🇬 新加坡节点 B"
     type: ss
-    server: 57.182.171.172
+    server: 18.142.192.63
     port: 8388
     cipher: chacha20-ietf-poly1305
-    password: dppkfc3DGkPB
+    password: DHQAxvgU5ZuC
     udp: true
 
-  - name: "🇭🇰 香港主节点"
+  - name: "🇯🇵 日本节点 C"
     type: ss
-    server: 18.166.159.76
+    server: 52.198.35.13
     port: 8388
     cipher: chacha20-ietf-poly1305
-    password: 8HyzwP2ndDq2
+    password: r2LGmFeH8dpS
     udp: true
 
-  - name: "🇰🇷 韩国节点"
-    type: ss
-    server: 13.125.29.84
-    port: 8388
-    cipher: chacha20-ietf-poly1305
-    password: vEwLrYpE4uQT
-    udp: true
-
-  - name: "🇭🇰 香港备用1"
-    type: ss
-    server: 16.162.213.179
-    port: 8388
-    cipher: chacha20-ietf-poly1305
-    password: WTQVIoFIzB0u
-    udp: true
-
-  - name: "🇭🇰 香港备用2"
-    type: ss
-    server: 18.166.230.49
-    port: 8388
-    cipher: chacha20-ietf-poly1305
-    password: RwrGkjikZ6v7
-    udp: true
+proxy-groups:
+  - name: "手动选择"
+    type: select
+    proxies:
+      - 🇭🇰 香港节点 A
+      - 🇸🇬 新加坡节点 B
+      - 🇯🇵 日本节点 C
 
 rules:
-  - MATCH,🇭🇰 香港主节点
+  - MATCH,手动选择
