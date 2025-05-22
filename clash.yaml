@@ -13,7 +13,7 @@ dns:
     - tls://1.1.1.1
 
 proxies:
-  - name: "🇭🇰 香港节点 A"
+  - name: "🇭🇰 香港主节点 A"
     type: ss
     server: 43.199.244.212
     port: 8388
@@ -37,13 +37,22 @@ proxies:
     password: r2LGmFeH8dpS
     udp: true
 
+  - name: "🇭🇰 香港备用节点 D"
+    type: ss
+    server: 16.163.6.123
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: s4rPUPGA8bTr
+    udp: true
+
 proxy-groups:
-  - name: "手动选择"
+  - name: "🌐 手动选择"
     type: select
     proxies:
-      - 🇭🇰 香港节点 A
+      - 🇭🇰 香港主节点 A
+      - 🇭🇰 香港备用节点 D
       - 🇸🇬 新加坡节点 B
       - 🇯🇵 日本节点 C
 
 rules:
-  - MATCH,手动选择
+  - MATCH,🌐 手动选择
